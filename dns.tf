@@ -28,3 +28,11 @@ resource "aws_route53_record" "ns" {
     "${aws_route53_zone.delegated_zone.name_servers.3}"
   ]
 }
+
+output "route53_env_zone" {
+  value = "${aws_route53_zone.delegated_zone.zone_id}"
+}
+
+output "route53_global_zone" {
+  value = "${data.terraform_remote_state.global.route53_zone}"
+}

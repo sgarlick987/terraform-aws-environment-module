@@ -31,3 +31,19 @@ resource "aws_key_pair" "bootstrap_key_pair" {
   key_name = "${var.environment}"
   public_key = "${file("../files/ssh_key_pair.pub")}"
 }
+
+output "vpc_id" {
+  value = "${module.vpc.vpc_id}"
+}
+
+output "vpc_name" {
+  value = "${module.vpc.name}"
+}
+
+output "private_subnets" {
+  value = "${module.vpc.private_subnets}"
+}
+
+output "public_subnets" {
+  value = "${module.vpc.public_subnets}"
+}
