@@ -43,3 +43,7 @@ output "private_subnets" {
 output "public_subnets" {
   value = "${module.vpc.public_subnets}"
 }
+
+output "db_subnet_group" {
+  value = "${aws_db_subnet_group.private.name}"
+}
